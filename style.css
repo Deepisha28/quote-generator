@@ -1,0 +1,65 @@
+/* Set the body to be on the lowest layer */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    z-index: 1; /* Ensure body is below other elements */
+  }
+  
+  /* Ensure overlay is above the body */
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;  /* Keeps it above the body */
+    z-index: 2; /* Ensure overlay is above the background */
+  }
+  
+  /* Button styling */
+  .category-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    position: relative;  /* Keeps the button above the overlay */
+    z-index: 3; /* Ensure button is on top of the overlay */
+  }
+  
+  .category-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional: Add styling to the quote container */
+  #quote-container {
+    margin-top: 20px;
+  }
+  
+  #quote {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+  

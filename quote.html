@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+        margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      background-image: url("https://www.shutterstock.com/shutterstock/videos/3565755185/thumb/8.jpg?ip=x480");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      
+    }
+
+    .overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      padding: 30px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .back-btn {
+        background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-btn:hover {
+      background-color: #45a049;
+    }
+
+
+    /* Optional: Custom Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Quote of the Day</h1>
+        <p class="quote" id="quote">Loading quote...</p>
+        <a href="index.html" class="back-btn">Back</a>
+      </div>
+    
+      <script>
+        const quotes = {
+          motivational: [
+            "The only way to do great work is to love what you do. – Steve Jobs",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+            "The best way to predict the future is to create it. – Peter Drucker"
+          ],
+          inspirational: [
+            "The only limit to our realization of tomorrow is our doubts of today. – Franklin D. Roosevelt",
+            "Believe you can and you're halfway there. – Theodore Roosevelt",
+            "It always seems impossible until it's done. – Nelson Mandela"
+          ],
+          success: [
+            "Success usually comes to those who are too busy to be looking for it. – Henry David Thoreau",
+            "Don’t be afraid to give up the good to go for the great. – John D. Rockefeller",
+            "Success is not how high you have climbed, but how you make a positive difference to the world. – Roy T. Bennett"
+          ]
+        };
+    
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+    
+        if (category && quotes[category]) {
+          const categoryQuotes = quotes[category];
+          const randomQuote = categoryQuotes[Math.floor(Math.random() * categoryQuotes.length)];
+          document.getElementById('quote').textContent = randomQuote;
+        } else {
+          document.getElementById('quote').textContent = "No quotes found for this category.";
+        }
+      </script>
+    </body>
+    </html>

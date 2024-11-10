@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background-image: url("https://t3.ftcdn.net/jpg/01/95/72/18/360_F_195721857_qwm4QSETlBFtCSKWW7kbNt3O5DRgAanr.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      position: relative;
+    }
+
+    .overlay {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+      z-index: 3;
+    }
+
+    .category-btn:hover {
+      background-color: #45a049;
+    }
+
+    #quote-container {
+      margin-top: 20px;
+    }
+
+    #quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Quote Generator</h1>
+    <a href="quote.html?category=motivational" class="category-btn">Motivational</a>
+    <a href="quote.html?category=inspirational" class="category-btn">Inspirational</a>
+    <a href="quote.html?category=success" class="category-btn">Success</a>
+    </div>
+    </body>
+    </html>
